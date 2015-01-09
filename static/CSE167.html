@@ -3,10 +3,54 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>HCI Project Portfolio</title>
+	<title>HCI Project Portfolio - CSE167</title>
+
+	<style>
+	.container { position:relative; padding:0 0 0 105px; }
+	#sidebar {
+	    position:absolute;
+	    top:0; bottom:0; left:0;
+	    width:100px;
+	    background:#B8DBFF;
+	    
+	}
+
+	#item1 { border:1px solid #000;  
+	    margin:0 0 5px 0;
+	}
+	#item2 { border:1px solid #000; 
+	    margin:5px 0 5px 0;
+	}
+	#item3 { border:1px solid #000; 
+	    margin:5px 0 0 0;
+	}
+	#item4 { border:1px solid #000; 
+	    margin:5px 0 0 0;
+	}
+	</style>
+
+
+
 </head>
 
 <body>
+
+<div class="container">
+	<div id="sidebar">
+		<ul style="list-style-type: none; margin:0; padding:0;">
+		  <li><a href="index.html">Home</a></li>
+		  <li><a href="CSE167.html">CSE167</a></li>
+		  <ul style="list-style-type: none; margin:0; padding-left:10px;">
+			  <li><a href="#item1">Week 0</a></li>
+			  <li><a href="#item2">Week 1</a></li>
+			  <li><a href="#item3">Week 2</a></li>
+			  <li><a href="#item4">Week 3</a></li>
+		  </ul>
+		  <li><a href="CSE168.html">CSE168</a></li>
+		</ul>
+	</div>
+
+	<div>
 	<h1>CSE167 Project: Kart-Mania<h1>
 
 	<h2>Team and Project Information<h2>
@@ -25,7 +69,7 @@
 		<h2>Project Design:</h2>
 		<p>We decided to start by creating a simple track with 4 bezier curves and 13 control points:</p>
 
-		<a href="CSE167imgs/defaulttrack.png"><img alt="defaultTrack" src="CSE167imgs/defaulttrack.png" width="144" height="216" /></a>
+		<p style="padding-left:30px;"><a href="CSE167imgs/defaulttrack.png"><img alt="defaultTrack" src="CSE167imgs/defaulttrack.png" width="144" height="216" /></a></p>
 
 		<p>This curve will span the x and y plane, and will be rotated.  The camera will then be set to travel down the track by modifying the camera's center and eye position according to the points calculated on the curve.  The curve will also be able to be moved in the z plane to create hills.
 
@@ -33,7 +77,7 @@
 
 		To create the track, we decided to use multiple curves along our chosen path and use GL_QUAD_STRIPS to created the path.  we decided to make partial scenery on both sides of the track in a similar way, where we draw the scenery along the curves as we go:</p>
 
-		<a href="CSE167imgs/trackscene.png"><img alt="trackScene" src="CSE167imgs/trackscene.png" width="144" height="216" /></a>
+		<p style="padding-left:30px;"><a href="CSE167imgs/trackscene.png"><img alt="trackScene" src="CSE167imgs/trackscene.png" width="144" height="216" /></a></p>
 
 		<p>For embellishments, we plan to use a grass or dirt texture for the scenery, and setting the background color of the opengl window to blue.  We will also use a road texture with lines to create a 2-lane road.  We will also be using shading, but have not decided which type to use.  Options we debated are toon-shading or shadow mapping and shadow volumes.  We have not decided if we want to create a realistic or cartoon style scene.
 		</p>
@@ -46,26 +90,26 @@
 			<li>procedurally generated scenery</li>
 			<li>Collision Detection</li>
 		</ul>
-</body>
+	</div>
 
 
-<body>
+<div id="item1">
 	<h2>Week 0</h2>
 		<p>Since we formed our group early, we also started on the project a week early.  This post is for the work we did before the first official turn in, Week 1. </p>
 
 		<h3>Edit Mode:</h3>
 			<p>We completed the bezier curve referencing homework 6 for help:</p>
 
-			<a href="CSE167imgs/week0curve.png"><img class="alignnone size-full wp-image-8" alt="week0curve" src="CSE167imgs/week0curve.png" width="149" height="223" /></a>
+			<p style="padding-left:30px;"><a href="CSE167imgs/week0curve.png"><img class="alignnone size-full wp-image-8" alt="week0curve" src="CSE167imgs/week0curve.png" width="149" height="223" /></a></p>
 
 			<p>We created a track() class, with 3 draw methods.  drawPoints, which draws the control points, drawCurves(), which draws the red bezier curve, and drawTrack(), which draws the actual track.  In edit mode, drawPoints() and drawCurves() are called, while in game mode, only drawTrack() will be called.  Currently, we have game mode also call drawCurves() for debugging.  In edit mode, we disable GL_LIGHTING.</p>
 
-			<a href="CSE167imgs/week0editmode.png"><img class="alignnone size-full wp-image-9" alt="Week0EditMode" src="CSE167imgs/week0editmode.png" width="141" height="226" /></a>
+			<p style="padding-left:30px;"><a href="CSE167imgs/week0editmode.png"><img class="alignnone size-full wp-image-9" alt="Week0EditMode" src="CSE167imgs/week0editmode.png" width="141" height="226" /></a></p>
 
 			<p>In edit mode, we can currently rotate the track.  Adjusting control points is not implemented yet.</p>
 
 		<h3>Game Mode:</h3>
-			<a href="CSE167imgs/week0gamemode.png"><img class="alignnone size-medium wp-image-10" alt="Week0GameMode" src="CSE167imgs/week0gamemode.png" width="300" height="154" /></a>
+			<p style="padding-left:30px;"><a href="CSE167imgs/week0gamemode.png"><img class="alignnone size-medium wp-image-10" alt="Week0GameMode" src="CSE167imgs/week0gamemode.png" width="300" height="154" /></a></p>
 
 			<p>In game mode, we have temporarily found a general initial camera position using translation matrices.   The user can use the keys up, down, left, and right to move the camera position.  Currently, there are no restrictions on the amount you can translate the camera.  Camera following the curve is not implemented yet.</p>
 
@@ -84,25 +128,25 @@
 				<li>Add a camera at the correct position</li>
 				<li>possibly have the camera follow the curve by the end of the week</li>
 			</ol>
-</body>
+</div>
 
-<body>
+<div id="item2">
 	<h2>Week 1</h2>
 		<p>We created a camera which starts at this initial position:</p>
 
-		<a href="CSE167imgs/week1camera.png"><img class="alignnone size-medium wp-image-17" alt="week1camera" src="CSE167imgs/week1camera.png" width="300" height="300" /></a>
+		<p style="padding-left:30px;"><a href="CSE167imgs/week1camera.png"><img class="alignnone size-medium wp-image-17" alt="week1camera" src="CSE167imgs/week1camera.png" width="300" height="300" /></a></p>
 
 		<p>The camera now follows the track, including the curves using the up key:</p>
 
-		<a href="CSE167imgs/week1camfollowroad.png"><img class="alignnone size-medium wp-image-18" alt="week1camfollowroad" src="CSE167imgs/week1camfollowroad.png" width="300" height="300" /></a>
+		<p style="padding-left:30px;"><a href="CSE167imgs/week1camfollowroad.png"><img class="alignnone size-medium wp-image-18" alt="week1camfollowroad" src="CSE167imgs/week1camfollowroad.png" width="300" height="300" /></a></p>
 
 		<p>We also finished mapping a road texture to the track.</p>
 
-		<a href="CSE167imgs/week1texture.png"><img class="alignnone size-medium wp-image-19" alt="week1texture" src="CSE167imgs/week1texture.png" width="300" height="300" /></a>
+		<p style="padding-left:30px;"><a href="CSE167imgs/week1texture.png"><img class="alignnone size-medium wp-image-19" alt="week1texture" src="CSE167imgs/week1texture.png" width="300" height="300" /></a></p>
 
 		<p>We fixed near-plane clipping (oblique view frustum)  which can be toggled on and off with the 'o' key:</p>
 
-		<a href="CSE167imgs/week1frustum.png"><img class="alignnone size-medium wp-image-20" alt="week1frustum" src="CSE167imgs/week1frustum.png" width="298" height="300" /></a>
+		<p style="padding-left:30px;"><a href="CSE167imgs/week1frustum.png"><img class="alignnone size-medium wp-image-20" alt="week1frustum" src="CSE167imgs/week1frustum.png" width="298" height="300" /></a></p>
 
 	<h3>Problems Along the Way:</h3>
 
@@ -127,9 +171,9 @@
 			<li>Make a simple model car</li>
 		<li>Achieve C1 continuity</li>
 		</ol>
-</body>
+</div>
 
-<body>
+<div id="item3">
 	<h2>Week 2</h2>
 
 	<h4>Added a model car</h4>
@@ -138,7 +182,7 @@
 		<li>Added Sky by changing the background color to blue</li>
 	</ol>
 
-	<p><a href="CSE167imgs/week2gamemode.png"><img class="alignnone size-medium wp-image-37" alt="week2gamemode" src="CSE167imgs/week2gamemode.png" width="300" height="296" /></a></p>
+	<p style="padding-left:30px;"><a href="CSE167imgs/week2gamemode.png"><img class="alignnone size-medium wp-image-37" alt="week2gamemode" src="CSE167imgs/week2gamemode.png" width="300" height="296" /></a></p>
 
 	<ol>
 		<li>changed moving along the track from the up arrow key to an idle callback so that the car is continually moving</li>
@@ -146,19 +190,19 @@
 		<li>finalized the road texture and set it, removing the ability to toggle it on and off. There is also the option to increase the number of lanes.</li>
 	</ol>
 
-	<p><a href="CSE167imgs/week2drivingcar.png"><img class="alignnone size-medium wp-image-38" alt="week2drivingcar" src="CSE167imgs/week2drivingcar.png" width="300" height="300" /></a></p>
+	<p style="padding-left:30px;"><a href="CSE167imgs/week2drivingcar.png"><img class="alignnone size-medium wp-image-38" alt="week2drivingcar" src="CSE167imgs/week2drivingcar.png" width="300" height="300" /></a></p>
 
-	<h4>c1 continuity in the z-direction when adding in hills:</h4>
+	<p>c1 continuity in the z-direction when adding in hills:<p>
 
-	<p><a href="CSE167imgs/week2editmode2.png"><img class="alignnone size-medium wp-image-36" alt="week2editmode2" src="CSE167imgs/week2editmode2.png" width="289" height="300" /></a></p>
+	<p style="padding-left:30px;"><a href="CSE167imgs/week2editmode2.png"><img class="alignnone size-medium wp-image-36" alt="week2editmode2" src="CSE167imgs/week2editmode2.png" width="289" height="300" /></a></p>
 
 	<p>We wanted to add a flame particle effect to the output of the exhaust for 2 technical points. This was implemented by using the parametric equation of a cone to form the shape of the flame. Then GL_POINTS were moved along the z-axis, and the angle about the cone was changed to create a spiraling effect. Finally the colors were interpolated along the z-axis to create the flaming colors going from white to yellow, then yellow to red.</p>
 
-	<p><a href="CSE167imgs/week2fire.png"><img class="alignnone size-medium wp-image-45" alt="week2fire" src="CSE167imgs/week2fire.png" width="290" height="300" /></a></p>
+	<p style="padding-left:30px;"><a href="CSE167imgs/week2fire.png"><img class="alignnone size-medium wp-image-45" alt="week2fire" src="CSE167imgs/week2fire.png" width="290" height="300" /></a></p>
 
 	<p>Added objects on road, with bounding spheres around each object and the car.  we loop through and compare the car's bounding sphere to each object's bounding sphere.  To start with, we print out a "crash!" message to the console upon collision.</p>
 
-	<h3><a href="CSE167imgs/week2objects.png"><img class="alignnone size-medium wp-image-46" alt="week2objects" src="CSE167imgs/week2objects.png" width="300" height="224" /></a></h3>
+	<p style="padding-left:30px;"><a href="CSE167imgs/week2objects.png"><img class="alignnone size-medium wp-image-46" alt="week2objects" src="CSE167imgs/week2objects.png" width="300" height="224" /></a></p>
 
 	<h4>Added Terrain:</h4>
 
@@ -236,7 +280,7 @@
 
 		<p>Track length, camera skip caused by the sides of the track being shorter than the curved sides, fixed by doubling length of sides.</p>
 		
-		<a href="CSE167imgs/week2editmode1.png"><img class="alignnone size-medium wp-image-35" alt="week2editmode1" src="CSE167imgs/week2editmode1.png" width="300" height="300" /></a>
+		<p style="padding-left:30px;"><a href="CSE167imgs/week2editmode1.png"><img class="alignnone size-medium wp-image-35" alt="week2editmode1" src="CSE167imgs/week2editmode1.png" width="300" height="300" /></a></p>
 		
 		<p>Car following track vs only being drawn stationary on screen</p>
 		
@@ -249,10 +293,10 @@
 			<li>Make car crash sequence</li>
 			<li>position the objects on the road randomly (currently all appear in center of road)</li>
 		</ol>
-</body>
+</div>
 
 
-<body>
+<div id="item4">
 	<h2>Week 3 (final week)</h2>
 
 	<h4>Video Link:</h4>
@@ -324,6 +368,9 @@
 
 	<p>Reference:  <a href="https://cse167project.wordpress.com">CSE167 Final project 2013</a></p>
 
-	<p>Back to <a href="index.html">index</a>
+	<p><a href="#">Back to top of page</a>
+</div>
+
 </body>
+
 </html>
