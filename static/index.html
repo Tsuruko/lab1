@@ -4,21 +4,56 @@
 <head>
 	<meta charset="utf-8">
 	<title>HCI Project Portfolio</title>
+
+	<style>
+	.container { position:relative; padding:0 0 0 105px; }
+	#sidebar {
+	    position:absolute;
+	    top:0; bottom:0; left:0;
+	    width:100px;
+	    background:#B8DBFF;
+	}
+
+	#item1 { border:1px solid #000;  
+	    margin:0 0 5px 0;
+	}
+	#item2 { border:1px solid #000; 
+	    margin:5px 0 5px 0;
+	}
+	#item3 { border:1px solid #000; 
+	    margin:5px 0 0 0;
+	}
+	</style>
+
 </head>
 
 <body>
-	<!-- this is a comment in HTML -->
-	<h1>Monica Liu</h1> <!-- h1 through h5 are headers. The higher the number, the smaller the header -->
-	<h4>Project Portfolio</h4>
 
-	<!-- p means paragraph -->
-	<p>Monica Liu is a 4th year Computer Science undergrad studen at UCSD.</p>
+<div class="container">
+	<div id="sidebar">
+		<ul style="list-style-type: none; margin:0; padding:0;">
+		  <li><a href="index.html">Home</a></li>
+		  <li><a href="CSE167.html">CSE167</a></li>
+		  <li><a href="CSE168.html">CSE168</a></li>
+		</ul>
+	</div>
 
-	<h4>Projects</h4>
-	<ol>
-		<li><a href="CSE167.html">CSE167 project - Kart Mania</a></li>
-		<li><a href="CSE168.html">CSE168 project - C++ Renderer</a></li>
-		<li>...</li>
-	</ol>
+	<div>
+		<!-- this is a comment in HTML -->
+		<h1>Monica Liu</h1> <!-- h1 through h5 are headers. The higher the number, the smaller the header -->
+		<h4>Project Portfolio</h4>
+
+		<!-- p means paragraph -->
+		<p>Monica Liu is a 4th year Computer Science undergrad studen at UCSD.</p>
+
+		<h4>Projects</h4>
+		<ol>
+			<li><a href="CSE167.html">CSE167 project - Kart Mania</a></li>
+			<li><a href="CSE168.html">CSE168 project - C++ Renderer</a></li>
+			<li>...</li>
+		</ol>
+	</div>
+
+
 </body>
 </html>
